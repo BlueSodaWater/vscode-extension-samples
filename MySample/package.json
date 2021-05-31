@@ -1,7 +1,7 @@
 {
-	"name": "decorator-sample",
-	"displayName": "decorator-sample",
-	"description": "666",
+	"name": "MySample",
+	"displayName": "MySample",
+	"description": "6",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.56.0"
@@ -14,17 +14,40 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"colors": [
+		"commands": [
 			{
-				"id": "myextension.largeNumberBackground",
-				"description": "Background decoration color for large numbers",
-				"defaults": {
-					"dark": "#FF000055",
-					"light": "#d9ff0055",
-					"highContrast": "#FF000055"
-				}
+				"command": "test.inputName",
+				"title": "test"
+			},
+			{
+				"command": "test.customWelcome",
+				"title": "test"
+			},
+			{
+				"command": "test.keybindings",
+				"title": "test"
+			},
+			{
+				"command": "test.customMenu",
+				"title": "test"
 			}
-		]
+		],
+		"keybindings":[
+			{
+				"command": "test.keybindings",
+				"key": "Cmd+]",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "test.customMenu",
+					"alt": "test.customMenu",
+					"group": "navigation"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
